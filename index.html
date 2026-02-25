@@ -962,6 +962,7 @@
             margin-bottom: 12px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
+            line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
@@ -2105,8 +2106,6 @@
 
                 <!-- CONTACT FORM -->
                 <form class="contact-form" action="https://formsubmit.co/habibdione057@gmail.com" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
                     <h4 style="margin-bottom: 25px; text-align: center;">Envoyez-moi un message</h4>
                     
                     <div class="form-group">
@@ -2120,16 +2119,11 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="subject">Sujet</label>
-                        <input type="text" id="subject" name="subject" placeholder="Sujet du message" required>
-                    </div>
-
-                    <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
                     </div>
 
-                    <button type="submit" class="btn-submit">Envoyer le Message</button>
+                    <button type="submit" class="btn-submit">Envoyer</button>
                 </form>
 
                 <div class="social-links">
@@ -2221,15 +2215,6 @@
                     link.classList.add('active');
                 }
             });
-        });
-
-        // Form Submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            // Permettre l'envoi du formulaire via FormSubmit
-            // Le message de confirmation s'affichera après l'envoi
-            setTimeout(() => {
-                alert('Merci pour votre message! Je vous recontacterai bientôt.');
-            }, 500);
         });
     </script>
 </body>
