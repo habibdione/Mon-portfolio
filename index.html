@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habib Dione - Ingénieur Géomatique & SIG</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --primary-dark: #0b5ed7;
+            --secondary-color: #f24138;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f4f7fb;
+            --bg-dark: #1a1a1a;
+            --text-dark-mode: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--bg-light), #eef2f7);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark-mode);
+        }
+
+        /* ===== DARK MODE TOGGLE ===== */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 999;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .navbar-custom {
+            background: rgba(30, 30, 30, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-custom .navbar-brand {
+            font-weight: 800;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        body.dark-mode .navbar-custom .nav-link {
+            color: var(--text-dark-mode) !important;
+        }
+
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .nav-link.active {
+            color: var(--primary-color) !important;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,10 Q300,0 600,10 T1200,10 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.1)"></path></svg>');
+            background-size: cover;
+            animation: wave 15s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(1200px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .profile-img-hero {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin: 20px auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .cta-buttons {
+            margin-top: 40px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-custom,
+        .btn-secondary-custom {
+            padding: 12px 35px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary-custom {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary-custom {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary-custom:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* ===== SECTIONS GÉNÉRALES ===== */
+        section {
+            padding: 80px 20px;
+            min-height: auto;
+            transition: all 0.3s ease;
+        }
+
+        section {
+            background: white;
+        }
+
+        body.dark-mode section {
+            background: #2a2a2a;
+        }
+
+        section:nth-child(even) {
+            background: linear-gradient(135deg, #f0f4ff, #e6ecf7);
+        }
+
+        body.dark-mode section:nth-child(even) {
+            background: #1f1f1f;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            flex-grow: 1;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), transparent);
+            max-width: 100px;
+        }
+
+        .section-title i {
+            color: var(--primary-color);
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        body.dark-mode .stat-card {
+            background: #333;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        #about {
+            background: white;
+        }
+
+        body.dark-mode #about {
+            background: #2a2a2a;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: var(--text-light);
+        }
+
+        body.dark-mode .about-content p {
+            color: #b0b0b0;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SKILLS SECTION ===== */
+        #skills {
+            background: linear-gradient(135deg, #f0f4ff, #e6ecf7);
+        }
+
+        body.dark-mode #skills {
+            background: #1f1f1f;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        body.dark-mode .skill-card {
+            background: #333;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card h4 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .skill-list {
+            list-style: none;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .skill-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        body.dark-mode .skill-list li {
+            border-bottom-color: #444;
+        }
+
+        .skill-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* ===== PROGRESS BAR ===== */
+        .skill-progress {
+            margin: 15px 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        body.dark-mode .progress-label {
+            color: var(--text-dark-mode);
+        }
+
+        .progress {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        body.dark-mode .progress {
+            background: #444;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary-color), #2563eb);
+            height: 100%;
+            border-radius: 10px;
+            animation: progressFill 2s ease-out;
+        }
+
+        @keyframes progressFill {
+            from { width: 0 !important; }
+        }
+
+        /* ===== TOOLS SECTION ===== */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .tool-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.dark-mode .tool-item {
+            background: #333;
+        }
+
+        .tool-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .tool-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        body.dark-mode .tool-name {
+            color: var(--text-dark-mode);
+        }
+
+        /* ===== LANGUAGES SECTION ===== */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .language-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .language-card {
+            background: #333;
+        }
+
+        .language-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .language-flag {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .language-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        body.dark-mode .language-name {
+            color: var(--text-dark-mode);
+        }
+
+        .language-level {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+            animation: fadeInUp 0.6s ease;
+        }
+
+        body.dark-mode .service-card {
+            background: #333;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card h5 {
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        body.dark-mode .service-card h5 {
+            color: var(--text-dark-mode);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        body.dark-mode .service-card p {
+            color: #b0b0b0;
+        }
+
+        /* ===== EXPERIENCE SECTION ===== */
+        #experience {
+            background: white;
+        }
+
+        body.dark-mode #experience {
+            background: #2a2a2a;
+        }
+
+        .experience-item {
+            background: white;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 25px;
+            margin-bottom: 30px;
+            animation: fadeInLeft 0.6s ease;
+            position: relative;
+        }
+
+        body.dark-mode .experience-item {
+            background: #333;
+        }
+
+        .experience-item h5 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .experience-item .company {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .experience-item .period {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        body.dark-mode .experience-item .period {
+            color: #b0b0b0;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item ul li {
+            padding: 8px 0;
+            color: var(--text-light);
+            line-height: 1.6;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        body.dark-mode .experience-item ul li {
+            color: #b0b0b0;
+        }
+
+        .experience-item ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* ===== EDUCATION SECTION ===== */
+        #education {
+            background: linear-gradient(135deg, #f0f4ff, #e6ecf7);
+        }
+
+        body.dark-mode #education {
+            background: #1f1f1f;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 18px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: var(--primary-color);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            animation: fadeInUp 0.6s ease;
+        }
+
+        body.dark-mode .timeline-item {
+            background: #333;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -43px;
+            top: 25px;
+            width: 18px;
+            height: 18px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 0 8px rgba(13, 110, 253, 0.1);
+        }
+
+        .timeline-item strong {
+            color: var(--primary-color);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item em {
+            display: block;
+            color: var(--text-light);
+            font-style: normal;
+            margin-top: 8px;
+        }
+
+        body.dark-mode .timeline-item em {
+            color: #b0b0b0;
+        }
+
+        /* ===== PROJECTS SECTION ===== */
+        #projects {
+            background: white;
+        }
+
+        body.dark-mode #projects {
+            background: #2a2a2a;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.35s ease;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        body.dark-mode .project-card {
+            background: #333;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-video {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+        }
+
+        .project-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .project-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        body.dark-mode .project-text {
+            color: #b0b0b0;
+        }
+
+        .project-tags {
+            margin: 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: #1e3a8a;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        body.dark-mode .tag {
+            background-color: #1e3a8a;
+            color: #e0e7ff;
+        }
+
+        .btn-custom {
+            background: linear-gradient(135deg, var(--primary-color), #2563eb);
+            color: white;
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* ===== DEPLOYED PROJECTS ===== */
+        .deployed-projects-container {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(13, 110, 253, 0.2);
+        }
+
+        .deployed-projects-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 35px;
+            text-align: center;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .deployed-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .deployed-project-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            padding: 40px 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(13, 110, 253, 0.1);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.35s ease;
+            animation: fadeInUp 0.6s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark-mode .deployed-project-card {
+            background: linear-gradient(135deg, #444 0%, #333 100%);
+            border-color: rgba(13, 110, 253, 0.3);
+        }
+
+        .deployed-project-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 40px rgba(13, 110, 253, 0.2);
+            background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+        }
+
+        body.dark-mode .deployed-project-card:hover {
+            background: linear-gradient(135deg, #555 0%, #444 100%);
+        }
+
+        .deployed-project-icon {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: rgba(13, 110, 253, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .deployed-project-card:hover .deployed-project-icon {
+            background: rgba(13, 110, 253, 0.2);
+            transform: scale(1.1);
+        }
+
+        .deployed-project-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .deployed-project-desc {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        body.dark-mode .deployed-project-desc {
+            color: #bbb;
+        }
+
+        .visit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary-color), #2563eb);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .deployed-project-card:hover .visit-btn {
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+            animation: fadeInUp 0.6s ease;
+        }
+
+        body.dark-mode .testimonial-card {
+            background: #333;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        body.dark-mode .testimonial-text {
+            color: #b0b0b0;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .testimonial-info h6 {
+            margin: 0;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        body.dark-mode .testimonial-info h6 {
+            color: var(--text-dark-mode);
+        }
+
+        .testimonial-info p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        body.dark-mode .testimonial-info p {
+            color: #b0b0b0;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        #contact {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        #contact .section-title {
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        #contact .section-title::after {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-item p {
+            margin: 0;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin-top: 40px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            background: white;
+            color: var(--primary-color);
+            padding: 12px 40px;
+            font-weight: 600;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== SOCIAL LINKS ===== */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0a0a0a;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode footer {
+            background: #000;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-section .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary-custom,
+            .btn-secondary-custom {
+                width: 100%;
+                max-width: 300px;
+                margin: 10px auto;
+            }
+
+            .profile-img-hero {
+                width: 150px;
+                height: 150px;
+            }
+
+            .navbar-custom .nav-link {
+                margin: 5px 0;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== DARK MODE TOGGLE ===== -->
+    <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+        <i class="bi bi-moon-fill"></i>
+    </button>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-lg">
+            <a class="navbar-brand" href="#home">
+                <i class="bi bi-map"></i> Mon Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tools">Outils</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Formation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Expérience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.linkedin.com/in/habib-dione-23920a25b" target="_blank" style="margin-left: 10px;">
+                            <i class="bi bi-linkedin" style="font-size: 1.2rem; color: var(--primary-color);"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <img src="./scr/assets/profile.jpeg" alt="Habib Dione" class="profile-img-hero">
+            <h1>Habib Dione</h1>
+            <p class="subtitle">Ingénieur en Géomatique & Spécialiste SIG</p>
+            <p class="subtitle" style="font-size: 1.1rem; opacity: 0.85;">Analyse Spatiale • Data Science • Développement d'Applications Géospatiales</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn-primary-custom">Voir mes projets</a>
+                <a href="#contact" class="btn-secondary-custom">Me contacter</a>
+                <a href="./scr/assets/CV_HABIB_DIONE 2025_2026.pdf" download class="btn-primary-custom" style="background: transparent; color: white; border: 2px solid white;">📥 Télécharger mon CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS SECTION ===== -->
+    <section class="container-lg">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Années d'Expérience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Projets Réalisés</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Technologies Maîtrisées</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Clients Satisfaits</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="container-lg">
+        <h2 class="section-title">
+            <i class="bi bi-person-circle"></i> À propos de moi
+        </h2>
+        <div class="about-container">
+            <div class="about-content">
+                <p>
+                    Bonjour, je m'appelle Habib Dione, Ingénieur en Géomatique, spécialisé dans l'analyse spatiale avancée, la data science géospatiale et le développement de solutions SIG innovantes.
+                </p>
+                <p>
+                    Titulaire d'une formation de niveau ingénieur en Géomatique à l'Université Amadou Mahtar MBOW (UAM), j'ai acquis de solides compétences en mathématiques appliquées (statistiques, géostatistique), acquisition et traitement de données spatiales (LiDAR, drones, enquêtes terrain), ainsi qu'en géotraitement raster et vectoriel avancé.
+                </p>
+                <p>
+                    Mon parcours m'a permis de développer une expertise approfondie dans l'analyse spatiale avancée, la modélisation géographique (hydrologique, multicritère, réseaux), et la gestion de bases de données spatiales. Je dispose également de compétences en data science et intelligence artificielle appliquées au SIG.
+                </p>
+                <p>
+                    Je maîtrise le web mapping et le développement d'applications géospatiales, ainsi que les applications concrètes dans les domaines de la gestion environnementale, l'aménagement du territoire, la mobilité et les transports, et la gouvernance territoriale.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="./scr/assets/profile.jpeg" alt="Habib Dione - Photo de profil">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section id="skills">
+        <div class="container-lg">
+            <h2 class="section-title">
+                <i class="bi bi-star-fill"></i> Mes Compétences
+            </h2>
+            <div class="skills-grid">
+                <!-- Compétences Géomatique -->
+                <div class="skill-card">
+                    <i class="bi bi-map"></i>
+                    <h4>Géomatique & SIG</h4>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>ArcGIS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>QGIS</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>Télédétection</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Science -->
+                <div class="skill-card">
+                    <i class="bi bi-graph-up"></i>
+                    <h4>Data Science & IA</h4>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>Python</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>Machine Learning</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>Google Earth Engine</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Développement Web -->
+                <div class="skill-card">
+                    <i class="bi bi-code-slash"></i>
+                    <h4>Développement Web</h4>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>HTML/CSS/JS</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>Leaflet/Mapbox</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>React/Vue.js</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Applications Mobiles -->
+                <div class="skill-card">
+                    <i class="bi bi-phone"></i>
+                    <h4>Applications Mobiles</h4>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>Flutter</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>Dart</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>Géolocalisation</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bases de Données -->
+                <div class="skill-card">
+                    <i class="bi bi-database"></i>
+                    <h4>Bases de Données</h4>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>PostgreSQL/PostGIS</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>MongoDB</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>SQL Avancé</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Méthodologies -->
+                <div class="skill-card">
+                    <i class="bi bi-lightbulb"></i>
+                    <h4>Méthodologies</h4>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>Analyse Multicritère</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>Modélisation SIG</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-label">
+                            <span>Agile/Scrum</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TOOLS & TECHNOLOGIES SECTION ===== -->
+    <section id="tools">
+        <div class="container-lg">
+            <h2 class="section-title">
+                <i class="bi bi-tools"></i> Outils & Technologies
+            </h2>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <div class="tool-icon">🗺️</div>
+                    <div class="tool-name">ArcGIS</div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">🌐</div>
+                    <div class="tool-name">QGIS</div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">🐍</div>
+                    <div class="tool-name">Python</div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">📊</div>
+                    <div class="tool-name">PostGIS</div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">🗼</div>
+                    <div class="tool-name">Leaflet</div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">📱</div>
+                    <div class="tool-name">Flutter</div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">🌍</div>
+                    <div class="tool-name">Google Earth Engine</div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">💾</div>
+                    <div class="tool-name">MongoDB</div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">⚛️</div>
+                    <div class="tool-name">React</div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">🎨</div>
+                    <div class="tool-name">Vue.js</div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">🔄</div>
+                    <div class="tool-name">Git</div>
+                </div>
+                <div class="tool-item">
+                    <div class="tool-icon">🐳</div>
+                    <div class="tool-name">Docker</div>
+                </div>
+            </div>
+
+            <!-- LANGUAGES SECTION -->
+            <h3 class="section-title" style="margin-top: 60px;">
+                <i class="bi bi-translate"></i> Langues
+            </h3>
+            <div class="languages-grid">
+                <div class="language-card">
+                    <div class="language-flag">🇸🇳</div>
+                    <div class="language-name">Français</div>
+                    <div class="language-level">Avancé</div>
+                </div>
+                <div class="language-card">
+                    <div class="language-flag">🇬🇧</div>
+                    <div class="language-name">Anglais</div>
+                    <div class="language-level">Intermédiaire</div>
+                </div>
+                <div class="language-card">
+                    <div class="language-flag">🇪🇸</div>
+                    <div class="language-name">Espagnol</div>
+                    <div class="language-level">Intermédiaire</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section>
+        <div class="container-lg">
+            <h2 class="section-title">
+                <i class="bi bi-briefcase"></i> Services Proposés
+            </h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-map-fill"></i>
+                    </div>
+                    <h5>Consulting SIG</h5>
+                    <p>Expertise en systèmes d'information géographique, audit SIG et recommandations stratégiques.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h5>Développement d'Applications</h5>
+                    <p>Web mapping, applications mobiles géolocalisées et solutions SIG personnalisées.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+                    <h5>Analyse Spatiale</h5>
+                    <p>Modélisation géographique, analyse multicritère et traitement de données spatiales.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <h5>Formation & Coaching</h5>
+                    <p>Formation SIG, programmation géospatiale et coaching technique pour équipes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-database"></i>
+                    </div>
+                    <h5>Gestion de Données</h5>
+                    <p>Conception de bases de données spatiales, migration et optimisation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="bi bi-cloud"></i>
+                    </div>
+                    <h5>Infrastructure Spatiale</h5>
+                    <p>Mise en place de SDI, serveurs cartographiques et cloud-based GIS solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EDUCATION SECTION ===== -->
+    <section id="education">
+        <div class="container-lg">
+            <h2 class="section-title">
+                <i class="bi bi-mortarboard-fill"></i> Formation Académique
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Mai 2025 – Février 2027 (En cours)</strong>
+                    <em>Cycle Ingénieur en Géomatique</em>
+                    <p style="margin-top: 10px; color: #6b7280;">Université Amadou Mahtar MBOW – École Polytechnique de Diamniadio</p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Octobre 2021 – Décembre 2024</strong>
+                    <em>Licence en Géomatique et Développement d'Applications</em>
+                    <p style="margin-top: 10px; color: #6b7280;">Institut Supérieur d'Informatique (ISI), Dakar</p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Novembre 2019 – Août 2020</strong>
+                    <em>Baccalauréat – Série L2</em>
+                    <p style="margin-top: 10px; color: #6b7280;">Lycée de Diass</p>
+                </div>
+            </div>
+
+            <!-- CERTIFICATIONS -->
+            <h3 class="section-title" style="margin-top: 60px;">
+                <i class="bi bi-award"></i> Certifications
+            </h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>2024</strong>
+                    <em>Google Earth Engine for Geospatial Analysis</em>
+                    <p style="margin-top: 10px; color: #6b7280;">Certification Google</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>2023</strong>
+                    <em>Advanced GIS Specialist</em>
+                    <p style="margin-top: 10px; color: #6b7280;">Esri Certification</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>2023</strong>
+                    <em>Python for Geospatial Analysis</em>
+                    <p style="margin-top: 10px; color: #6b7280;">DataCamp Certification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE SECTION ===== -->
+    <section id="experience">
+        <div class="container-lg">
+            <h2 class="section-title">
+                <i class="bi bi-briefcase-fill"></i> Expérience Professionnelle
+            </h2>
+
+            <div class="experience-item">
+                <h5>Chargé d'Exploitation SIG</h5>
+                <span class="company">SONAGED SA</span>
+                <span class="period">2023 – Aujourd'hui</span>
+                <ul>
+                    <li>Conception et mise à jour de bases de données géographiques (SIG)</li>
+                    <li>Cartographie et géolocalisation des points et dispositifs de collecte</li>
+                    <li>Interventions dans plusieurs régions : Dakar, Thiès et Ziguinchor</li>
+                    <li>Appui au développement d'outils numériques pour la gestion des données spatiales</li>
+                    <li>Analyse spatiale pour l'aide à la décision et l'amélioration des services urbains</li>
+                    <li>Création de solution Web-Mobile</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects">
+        <div class="container-lg">
+            <h2 class="section-title">
+                <i class="bi bi-folder-check"></i> Mes Projets
+            </h2>
+            <div class="projects-grid">
+                <!-- Projet 1 -->
+                <div class="project-card">
+                    <div class="project-video">
+                        <video controls>
+                            <source src="./scr/assets/MES PROJETS/Cartographie Dispositif SONAGED.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la balise vidéo.
+                        </video>
+                    </div>
+                    <div class="project-body">
+                        <h5 class="project-title">Cartographie Dispositif SONAGED</h5>
+                        <p class="project-text">
+                            Cartographie et géolocalisation des points et dispositifs de collecte pour la gestion urbaine des déchets.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">SIG</span>
+                            <span class="tag">Cartographie</span>
+                            <span class="tag">Géolocalisation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="project-card">
+                    <div class="project-video">
+                        <video controls>
+                            <source src="./scr/assets/MES PROJETS/Classification.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la balise vidéo.
+                        </video>
+                    </div>
+                    <div class="project-body">
+                        <h5 class="project-title">Classification</h5>
+                        <p class="project-text">
+                            Classification et segmentation des données spatiales pour l'analyse et la modélisation géographique.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Analyse Spatiale</span>
+                            <span class="tag">Classification</span>
+                            <span class="tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="project-card">
+                    <div class="project-video">
+                        <video controls>
+                            <source src="./scr/assets/MES PROJETS/Dimensionnement.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la balise vidéo.
+                        </video>
+                    </div>
+                    <div class="project-body">
+                        <h5 class="project-title">Dimensionnement</h5>
+                        <p class="project-text">
+                            Dimensionnement d'infrastructures et optimisation des ressources à partir d'analyses SIG et de modélisations spatiales.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Modélisation</span>
+                            <span class="tag">Dimensionnement</span>
+                            <span class="tag">Optimisation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="project-card">
+                    <div class="project-video">
+                        <video controls>
+                            <source src="./scr/assets/MES PROJETS/Operation sur les images google earth engime.mkv" type="video/mp4">
+                            Votre navigateur ne supporte pas la balise vidéo.
+                        </video>
+                    </div>
+                    <div class="project-body">
+                        <h5 class="project-title">Opérations sur les images Google Earth Engine</h5>
+                        <p class="project-text">
+                            Manipulation et traitement avancé des images satellites via Google Earth Engine pour l'analyse temporelle et la classification.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Google Earth Engine</span>
+                            <span class="tag">Traitement d'images</span>
+                            <span class="tag">Télédétection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projets Déployés Section -->
+            <div class="deployed-projects-container">
+                <h3 class="deployed-projects-title">
+                    <i class="bi bi-link-45deg"></i> Accédez aux Projets
+                </h3>
+                <div class="deployed-projects-grid">
+                    <!-- Projet Redimensionnement -->
+                    <a href="https://habibdione.github.io/Redimensionnement-Project-SNG/" target="_blank" class="deployed-project-card">
+                        <div class="deployed-project-icon">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h5 class="deployed-project-name">Redimensionnement Project-SNG</h5>
+                        <p class="deployed-project-desc">
+                            Application web interactive pour le dimensionnement et l'optimisation des infrastructures.
+                        </p>
+                        <div class="visit-btn">
+                            Visiter le projet <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Projet SIG Senegal -->
+                    <a href="https://elhabibdione.github.io/sigsenegal/#7/14.701/-14.370" target="_blank" class="deployed-project-card">
+                        <div class="deployed-project-icon">
+                            <i class="bi bi-map"></i>
+                        </div>
+                        <h5 class="deployed-project-name">Géo Senegal</h5>
+                        <p class="deployed-project-desc">
+                            Plateforme cartographique interactive pour la visualisation et l'analyse des données spatiales du Sénégal.
+                        </p>
+                        <div class="visit-btn">
+                            Visiter la carte <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Projet Ziguinchor -->
+                    <a href="https://habibdione.github.io/ziguinchor/" target="_blank" class="deployed-project-card">
+                        <div class="deployed-project-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <h5 class="deployed-project-name">GéoZiguinchor</h5>
+                        <p class="deployed-project-desc">
+                            Application géospatiale dédiée à l'analyse et la gestion des données territoriales de Ziguinchor.
+                        </p>
+                        <div class="visit-btn">
+                            Visiter la plateforme <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section>
+        <div class="container-lg">
+            <h2 class="section-title">
+                <i class="bi bi-chat-quote"></i> Témoignages
+            </h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Habib a transformé notre approche SIG. Son expertise et son professionnalisme en font un partenaire de confiance pour nos projets géospatiaux."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">CB</div>
+                        <div class="testimonial-info">
+                            <h6>Cheikh Bamba FALL</h6>
+                            <p>Chef de Département SIG, SONAGED</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Un ingénieur passionné et rigoureux. Ses solutions SIG innovantes nous ont permis d'optimiser nos opérations de manière significative."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MD</div>
+                        <div class="testimonial-info">
+                            <h6>Mohamadou Lamine Diop</h6>
+                            <p>Délégué Régional Ziguinchor, SONAGED SA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Ses applications mobiles géospatiales sont remarquables. Une excellente maîtrise technique combinée à une grande écoute du client."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">IM</div>
+                        <div class="testimonial-info">
+                            <h6>Dr Ibramhima Mall</h6>
+                            <p>Chef de Département, Université Amadou Mahtar MBOW</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact">
+        <div class="container-lg">
+            <div class="contact-content">
+                <h2 class="section-title">
+                    <i class="bi bi-envelope-fill"></i> Contactez-moi
+                </h2>
+                <p style="font-size: 1.1rem; margin-bottom: 40px; opacity: 0.95;">
+                    Je serais ravi de répondre à vos questions ou de collaborer sur des projets innovants.
+                </p>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="bi bi-envelope"></i>
+                        <p><strong>Email</strong></p>
+                        <a href="mailto:habibdione057@gmail.com">habibdione057@gmail.com</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="bi bi-telephone"></i>
+                        <p><strong>Téléphone</strong></p>
+                        <a href="tel:+221783021553">+221 78 302 1553</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="bi bi-linkedin"></i>
+                        <p><strong>LinkedIn</strong></p>
+                        <a href="https://www.linkedin.com/in/habib-dione-23920a25b" target="_blank">Voir mon profil</a>
+                    </div>
+                </div>
+
+                <!-- CONTACT FORM -->
+                <form class="contact-form" action="https://formsubmit.co/habibdione057@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+                    <h4 style="margin-bottom: 25px; text-align: center;">Envoyez-moi un message</h4>
+                    
+                    <div class="form-group">
+                        <label for="name">Votre Nom</label>
+                        <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Votre Email</label>
+                        <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" placeholder="Sujet du message" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Envoyer le Message</button>
+                </form>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/habib-dione-23920a25b" class="social-link" title="LinkedIn" target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="mailto:habibdione057@gmail.com" class="social-link" title="Email">
+                        <i class="bi bi-envelope"></i>
+                    </a>
+                    <a href="tel:+221783021553" class="social-link" title="Téléphone">
+                        <i class="bi bi-telephone"></i>
+                    </a>
+                    <a href="https://github.com" class="social-link" title="GitHub" target="_blank">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2026 Habib Dione - Ingénieur Géomatique & Spécialiste SIG. Tous droits réservés.</p>
+        <p>Conçu avec <span style="color: var(--secondary-color);">❤</span> par Habib Dione</p>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP BUTTON ===== -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const htmlElement = document.documentElement;
+
+        // Check for saved dark mode preference
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isNowDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isNowDark);
+            darkModeToggle.innerHTML = isNowDark ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-fill"></i>';
+        });
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Active Nav Link
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Form Submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            // Permettre l'envoi du formulaire via FormSubmit
+            // Le message de confirmation s'affichera après l'envoi
+            setTimeout(() => {
+                alert('Merci pour votre message! Je vous recontacterai bientôt.');
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
