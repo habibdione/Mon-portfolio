@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -142,8 +143,13 @@
         }
 
         @keyframes wave {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(1200px); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(1200px);
+            }
         }
 
         .hero-content {
@@ -177,8 +183,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         .cta-buttons {
@@ -413,8 +426,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         .skill-list {
@@ -482,7 +502,9 @@
         }
 
         @keyframes progressFill {
-            from { width: 0 !important; }
+            from {
+                width: 0 !important;
+            }
         }
 
         /* ===== TOOLS SECTION ===== */
@@ -1293,6 +1315,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1304,6 +1327,7 @@
                 opacity: 0;
                 transform: translateX(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -1363,7 +1387,8 @@
             <a class="navbar-brand" href="#home">
                 <i class="bi bi-map"></i> Mon Portfolio
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -1393,7 +1418,8 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.linkedin.com/in/habib-dione-23920a25b" target="_blank" style="margin-left: 10px;">
+                        <a class="nav-link" href="https://www.linkedin.com/in/habib-dione-23920a25b" target="_blank"
+                            style="margin-left: 10px;">
                             <i class="bi bi-linkedin" style="font-size: 1.2rem; color: var(--primary-color);"></i>
                         </a>
                     </li>
@@ -1408,11 +1434,13 @@
             <img src="./scr/assets/profile.jpeg" alt="Habib Dione" class="profile-img-hero">
             <h1>Habib Dione</h1>
             <p class="subtitle">Ingénieur en Géomatique & Spécialiste SIG</p>
-            <p class="subtitle" style="font-size: 1.1rem; opacity: 0.85;">Analyse Spatiale • Data Science • Développement d'Applications Géospatiales</p>
+            <p class="subtitle" style="font-size: 1.1rem; opacity: 0.85;">Analyse Spatiale • Data Science •
+                Développement d'Applications Géospatiales</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn-primary-custom">Voir mes projets</a>
                 <a href="#contact" class="btn-secondary-custom">Me contacter</a>
-                <a href="./scr/assets/CV_HABIB_DIONE 2025_2026.pdf" download class="btn-primary-custom" style="background: transparent; color: white; border: 2px solid white;">📥 Télécharger mon CV</a>
+                <a href="./scr/assets/CV_HABIB_DIONE 2025_2026.pdf" download class="btn-primary-custom"
+                    style="background: transparent; color: white; border: 2px solid white;">📥 Télécharger mon CV</a>
             </div>
         </div>
     </section>
@@ -1447,16 +1475,25 @@
         <div class="about-container">
             <div class="about-content">
                 <p>
-                    Bonjour, je m'appelle Habib Dione, Ingénieur en Géomatique, spécialisé dans l'analyse spatiale avancée, la data science géospatiale et le développement de solutions SIG innovantes.
+                    Bonjour, je m'appelle Habib Dione, Ingénieur en Géomatique, spécialisé dans l'analyse spatiale
+                    avancée, la data science géospatiale et le développement de solutions SIG innovantes.
                 </p>
                 <p>
-                    Titulaire d'une formation de niveau ingénieur en Géomatique à l'Université Amadou Mahtar MBOW (UAM), j'ai acquis de solides compétences en mathématiques appliquées (statistiques, géostatistique), acquisition et traitement de données spatiales (LiDAR, drones, enquêtes terrain), ainsi qu'en géotraitement raster et vectoriel avancé.
+                    Titulaire d'une formation de niveau ingénieur en Géomatique à l'Université Amadou Mahtar MBOW (UAM),
+                    j'ai acquis de solides compétences en mathématiques appliquées (statistiques, géostatistique),
+                    acquisition et traitement de données spatiales (LiDAR, drones, enquêtes terrain), ainsi qu'en
+                    géotraitement raster et vectoriel avancé.
                 </p>
                 <p>
-                    Mon parcours m'a permis de développer une expertise approfondie dans l'analyse spatiale avancée, la modélisation géographique (hydrologique, multicritère, réseaux), et la gestion de bases de données spatiales. Je dispose également de compétences en data science et intelligence artificielle appliquées au SIG.
+                    Mon parcours m'a permis de développer une expertise approfondie dans l'analyse spatiale avancée, la
+                    modélisation géographique (hydrologique, multicritère, réseaux), et la gestion de bases de données
+                    spatiales. Je dispose également de compétences en data science et intelligence artificielle
+                    appliquées au SIG.
                 </p>
                 <p>
-                    Je maîtrise le web mapping et le développement d'applications géospatiales, ainsi que les applications concrètes dans les domaines de la gestion environnementale, l'aménagement du territoire, la mobilité et les transports, et la gouvernance territoriale.
+                    Je maîtrise le web mapping et le développement d'applications géospatiales, ainsi que les
+                    applications concrètes dans les domaines de la gestion environnementale, l'aménagement du
+                    territoire, la mobilité et les transports, et la gouvernance territoriale.
                 </p>
             </div>
             <div class="about-image">
@@ -1817,7 +1854,8 @@
                 <div class="timeline-item">
                     <strong>Mai 2025 – Février 2027 (En cours)</strong>
                     <em>Cycle Ingénieur en Géomatique</em>
-                    <p style="margin-top: 10px; color: #6b7280;">Université Amadou Mahtar MBOW – École Polytechnique de Diamniadio</p>
+                    <p style="margin-top: 10px; color: #6b7280;">Université Amadou Mahtar MBOW – École Polytechnique de
+                        Diamniadio</p>
                 </div>
 
                 <div class="timeline-item">
@@ -1898,12 +1936,35 @@
                     <div class="project-body">
                         <h5 class="project-title">Cartographie Dispositif SONAGED</h5>
                         <p class="project-text">
-                            Cartographie et géolocalisation des points et dispositifs de collecte pour la gestion urbaine des déchets.
+                            Cartographie et géolocalisation des points et dispositifs de collecte pour la gestion
+                            urbaine des déchets.
                         </p>
                         <div class="project-tags">
                             <span class="tag">SIG</span>
                             <span class="tag">Cartographie</span>
                             <span class="tag">Géolocalisation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 1bis : Portail Citoyen -->
+                <div class="project-card">
+                    <div class="project-video">
+                        <video controls>
+                            <source src="./scr/assets/MES PROJETS/Portail Citoyen.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la balise vidéo.
+                        </video>
+                    </div>
+                    <div class="project-body">
+                        <h5 class="project-title">Portail Citoyen</h5>
+                        <p class="project-text">
+                            Application web pour la gestion citoyenne des déchets à Ziguinchor, permettant aux habitants
+                            de signaler et suivre les collectes.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Web</span>
+                            <span class="tag">SIG</span>
+                            <span class="tag">Citoyenneté</span>
                         </div>
                     </div>
                 </div>
@@ -1919,7 +1980,8 @@
                     <div class="project-body">
                         <h5 class="project-title">Classification</h5>
                         <p class="project-text">
-                            Classification et segmentation des données spatiales pour l'analyse et la modélisation géographique.
+                            Classification et segmentation des données spatiales pour l'analyse et la modélisation
+                            géographique.
                         </p>
                         <div class="project-tags">
                             <span class="tag">Analyse Spatiale</span>
@@ -1940,7 +2002,8 @@
                     <div class="project-body">
                         <h5 class="project-title">Dimensionnement</h5>
                         <p class="project-text">
-                            Dimensionnement d'infrastructures et optimisation des ressources à partir d'analyses SIG et de modélisations spatiales.
+                            Dimensionnement d'infrastructures et optimisation des ressources à partir d'analyses SIG et
+                            de modélisations spatiales.
                         </p>
                         <div class="project-tags">
                             <span class="tag">Modélisation</span>
@@ -1954,14 +2017,16 @@
                 <div class="project-card">
                     <div class="project-video">
                         <video controls>
-                            <source src="./scr/assets/MES PROJETS/Operation sur les images google earth engime.mkv" type="video/mp4">
+                            <source src="./scr/assets/MES PROJETS/Operation sur les images google earth engime.mkv"
+                                type="video/mp4">
                             Votre navigateur ne supporte pas la balise vidéo.
                         </video>
                     </div>
                     <div class="project-body">
                         <h5 class="project-title">Opérations sur les images Google Earth Engine</h5>
                         <p class="project-text">
-                            Manipulation et traitement avancé des images satellites via Google Earth Engine pour l'analyse temporelle et la classification.
+                            Manipulation et traitement avancé des images satellites via Google Earth Engine pour
+                            l'analyse temporelle et la classification.
                         </p>
                         <div class="project-tags">
                             <span class="tag">Google Earth Engine</span>
@@ -1979,7 +2044,8 @@
                 </h3>
                 <div class="deployed-projects-grid">
                     <!-- Projet Redimensionnement -->
-                    <a href="https://habibdione.github.io/Redimensionnement-Project-SNG/" target="_blank" class="deployed-project-card">
+                    <a href="https://habibdione.github.io/Redimensionnement-Project-SNG/" target="_blank"
+                        class="deployed-project-card">
                         <div class="deployed-project-icon">
                             <i class="bi bi-diagram-3"></i>
                         </div>
@@ -1992,14 +2058,79 @@
                         </div>
                     </a>
 
+                    <!-- Projet Portail Citoyen -->
+                    <a href="https://habibdione.github.io/Geodechet-Ziguinchor/citoyen.html" target="_blank"
+                        class="deployed-project-card">
+                        <div class="deployed-project-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h5 class="deployed-project-name">Portail Citoyen</h5>
+                        <p class="deployed-project-desc">
+                            Plateforme citoyenne pour la gestion participative des déchets à Ziguinchor.
+                        </p>
+                        <div class="visit-btn">
+                            Accéder au portail <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Projet Portail RH -->
+                    <a href="https://habibdione.github.io/Geodechet-Ziguinchor/rh.html" target="_blank"
+                        class="deployed-project-card">
+                        <div class="deployed-project-icon">
+                            <i class="bi bi-person-badge"></i>
+                        </div>
+                        <h5 class="deployed-project-name">Portail RH</h5>
+                        <p class="deployed-project-desc">
+                            Gestion des ressources humaines pour le suivi, la planification et l'organisation des
+                            équipes terrain.
+                        </p>
+                        <div class="visit-btn">
+                            Accéder au portail RH <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Projet Superviseur Terrain -->
+                    <a href="https://habibdione.github.io/Geodechet-Ziguinchor/superviseur.html" target="_blank"
+                        class="deployed-project-card">
+                        <div class="deployed-project-icon">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                        <h5 class="deployed-project-name">Superviseur Terrain</h5>
+                        <p class="deployed-project-desc">
+                            Outil de supervision et de suivi des opérations terrain pour une gestion efficace des
+                            interventions.
+                        </p>
+                        <div class="visit-btn">
+                            Accéder au superviseur <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Projet Stock DAMG -->
+                    <a href="https://habibdione.github.io/Geodechet-Ziguinchor/Stock.html" target="_blank"
+                        class="deployed-project-card">
+                        <div class="deployed-project-icon">
+                            <i class="bi bi-box-seam"></i>
+                        </div>
+                        <h5 class="deployed-project-name">Stock DAMG</h5>
+                        <p class="deployed-project-desc">
+                            Application de gestion des stocks et matériels DAMG pour un suivi précis des entrées et
+                            sorties.
+                        </p>
+                        <div class="visit-btn">
+                            Accéder au stock <i class="bi bi-arrow-up-right"></i>
+                        </div>
+                    </a>
+
                     <!-- Projet SIG Senegal -->
-                    <a href="https://elhabibdione.github.io/sigsenegal/#7/14.701/-14.370" target="_blank" class="deployed-project-card">
+                    <a href="https://elhabibdione.github.io/sigsenegal/#7/14.701/-14.370" target="_blank"
+                        class="deployed-project-card">
                         <div class="deployed-project-icon">
                             <i class="bi bi-map"></i>
                         </div>
                         <h5 class="deployed-project-name">Géo Senegal</h5>
                         <p class="deployed-project-desc">
-                            Plateforme cartographique interactive pour la visualisation et l'analyse des données spatiales du Sénégal.
+                            Plateforme cartographique interactive pour la visualisation et l'analyse des données
+                            spatiales du Sénégal.
                         </p>
                         <div class="visit-btn">
                             Visiter la carte <i class="bi bi-arrow-up-right"></i>
@@ -2013,7 +2144,8 @@
                         </div>
                         <h5 class="deployed-project-name">GéoZiguinchor</h5>
                         <p class="deployed-project-desc">
-                            Application géospatiale dédiée à l'analyse et la gestion des données territoriales de Ziguinchor.
+                            Application géospatiale dédiée à l'analyse et la gestion des données territoriales de
+                            Ziguinchor.
                         </p>
                         <div class="visit-btn">
                             Visiter la plateforme <i class="bi bi-arrow-up-right"></i>
@@ -2033,7 +2165,8 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        "Habib a transformé notre approche SIG. Son expertise et son professionnalisme en font un partenaire de confiance pour nos projets géospatiaux."
+                        "Habib a transformé notre approche SIG. Son expertise et son professionnalisme en font un
+                        partenaire de confiance pour nos projets géospatiaux."
                     </p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">CB</div>
@@ -2046,7 +2179,8 @@
 
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        "Un ingénieur passionné et rigoureux. Ses solutions SIG innovantes nous ont permis d'optimiser nos opérations de manière significative."
+                        "Un ingénieur passionné et rigoureux. Ses solutions SIG innovantes nous ont permis d'optimiser
+                        nos opérations de manière significative."
                     </p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">MD</div>
@@ -2059,7 +2193,8 @@
 
                 <div class="testimonial-card">
                     <p class="testimonial-text">
-                        "Ses applications mobiles géospatiales sont remarquables. Une excellente maîtrise technique combinée à une grande écoute du client."
+                        "Ses applications mobiles géospatiales sont remarquables. Une excellente maîtrise technique
+                        combinée à une grande écoute du client."
                     </p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">IM</div>
@@ -2108,7 +2243,7 @@
                 <form class="contact-form" action="https://formsubmit.co/habibdione057@gmail.com" method="POST">
                     <input type="hidden" name="_next" value="https://habibdione.github.io/Mon-portfolio/">
                     <h4 style="margin-bottom: 25px; text-align: center;">Envoyez-moi un message</h4>
-                    
+
                     <div class="form-group">
                         <label for="name">Votre Nom</label>
                         <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
@@ -2128,7 +2263,8 @@
                 </form>
 
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/habib-dione-23920a25b" class="social-link" title="LinkedIn" target="_blank">
+                    <a href="https://www.linkedin.com/in/habib-dione-23920a25b" class="social-link" title="LinkedIn"
+                        target="_blank">
                         <i class="bi bi-linkedin"></i>
                     </a>
                     <a href="mailto:habibdione057@gmail.com" class="social-link" title="Email">
