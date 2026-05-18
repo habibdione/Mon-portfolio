@@ -23,8 +23,8 @@
             --primary-color: #0d6efd;
             --primary-dark: #0b5ed7;
             --secondary-color: #f24138;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
+            --text-dark: #000000;
+            --text-light: #1a1a1a;
             --bg-light: #f4f7fb;
             --bg-dark: #1a1a1a;
             --text-dark-mode: #e0e0e0;
@@ -103,7 +103,7 @@
 
         /* ===== NAVBAR ===== */
         .navbar-custom {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(248, 249, 250, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 15px 0;
@@ -241,7 +241,7 @@
         }
 
         .btn-primary-custom {
-            background: white;
+            background: #f8f9fa;
             color: var(--primary-color);
         }
 
@@ -270,7 +270,7 @@
         }
 
         section {
-            background: white;
+            background: #f8f9fa;
         }
 
         body.dark-mode section {
@@ -318,7 +318,7 @@
         }
 
         .stat-card {
-            background: white;
+            background: #f8f9fa;
             padding: 35px;
             border-radius: 15px;
             text-align: center;
@@ -351,7 +351,7 @@
 
         /* ===== ABOUT SECTION ===== */
         #about {
-            background: white;
+            background: #f8f9fa;
         }
 
         body.dark-mode #about {
@@ -375,7 +375,7 @@
         }
 
         body.dark-mode .about-content p {
-            color: #b0b0b0;
+            color: #ddd;
         }
 
         .about-image {
@@ -418,7 +418,7 @@
         }
 
         .skill-card {
-            background: white;
+            background: #f8f9fa;
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -471,13 +471,13 @@
 
         .skill-list li {
             padding: 8px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #000;
             display: flex;
             align-items: center;
         }
 
         body.dark-mode .skill-list li {
-            border-bottom-color: #444;
+            border-bottom-color: #555;
         }
 
         .skill-list li::before {
@@ -542,7 +542,7 @@
         }
 
         .tool-item {
-            background: white;
+            background: #f8f9fa;
             padding: 20px;
             border-radius: 12px;
             text-align: center;
@@ -588,7 +588,7 @@
         }
 
         .language-card {
-            background: white;
+            background: #f8f9fa;
             padding: 25px;
             border-radius: 12px;
             text-align: center;
@@ -621,7 +621,7 @@
 
         .language-level {
             font-size: 0.85rem;
-            color: var(--text-light);
+            color: var(--text-dark);
         }
 
         /* ===== SERVICES SECTION ===== */
@@ -633,7 +633,7 @@
         }
 
         .service-card {
-            background: white;
+            background: #f8f9fa;
             padding: 35px;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -675,12 +675,12 @@
         }
 
         body.dark-mode .service-card p {
-            color: #b0b0b0;
+            color: #ddd;
         }
 
         /* ===== EXPERIENCE SECTION ===== */
         #experience {
-            background: white;
+            background: #f8f9fa;
         }
 
         body.dark-mode #experience {
@@ -688,7 +688,7 @@
         }
 
         .experience-item {
-            background: white;
+            background: #f8f9fa;
             border-left: 4px solid var(--primary-color);
             padding-left: 25px;
             margin-bottom: 30px;
@@ -721,7 +721,7 @@
         }
 
         body.dark-mode .experience-item .period {
-            color: #b0b0b0;
+            color: #ddd;
         }
 
         .experience-item ul {
@@ -738,7 +738,7 @@
         }
 
         body.dark-mode .experience-item ul li {
-            color: #b0b0b0;
+            color: #ddd;
         }
 
         .experience-item ul li::before {
@@ -777,7 +777,7 @@
         .timeline-item {
             position: relative;
             margin-bottom: 35px;
-            background: white;
+            background: #f8f9fa;
             padding: 25px;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -815,12 +815,12 @@
         }
 
         body.dark-mode .timeline-item em {
-            color: #b0b0b0;
+            color: #ddd;
         }
 
         /* ===== PROJECTS SECTION ===== */
         #projects {
-            background: white;
+            background: #f8f9fa;
         }
 
         body.dark-mode #projects {
@@ -835,7 +835,7 @@
         }
 
         .project-card {
-            background: white;
+            background: #f8f9fa;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
@@ -883,7 +883,7 @@
         }
 
         body.dark-mode .project-text {
-            color: #b0b0b0;
+            color: #ddd;
         }
 
         .project-tags {
@@ -957,7 +957,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8eaf0 100%);
             padding: 40px 30px;
             border-radius: 15px;
             border: 2px solid rgba(13, 110, 253, 0.1);
@@ -977,7 +977,7 @@
             transform: translateY(-12px);
             border-color: var(--primary-color);
             box-shadow: 0 15px 40px rgba(13, 110, 253, 0.2);
-            background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+            background: linear-gradient(135deg, #e8eaf0 0%, #d8dcff 100%);
         }
 
         body.dark-mode .deployed-project-card:hover {
@@ -1017,14 +1017,14 @@
 
         .deployed-project-desc {
             font-size: 0.95rem;
-            color: #666;
+            color: #000;
             margin-bottom: 20px;
             line-height: 1.6;
             flex-grow: 1;
         }
 
         body.dark-mode .deployed-project-desc {
-            color: #bbb;
+            color: #ccc;
         }
 
         .visit-btn {
@@ -1054,7 +1054,7 @@
         }
 
         .testimonial-card {
-            background: white;
+            background: #f8f9fa;
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -1080,7 +1080,7 @@
         }
 
         body.dark-mode .testimonial-text {
-            color: #b0b0b0;
+            color: #ddd;
         }
 
         .testimonial-author {
@@ -1118,7 +1118,7 @@
         }
 
         body.dark-mode .testimonial-info p {
-            color: #b0b0b0;
+            color: #ddd;
         }
 
         /* ===== CONTACT SECTION ===== */
@@ -1237,7 +1237,7 @@
         }
 
         .btn-submit {
-            background: white;
+            background: #f8f9fa;
             color: var(--primary-color);
             padding: 12px 40px;
             font-weight: 600;
@@ -1276,7 +1276,7 @@
         }
 
         .social-link:hover {
-            background: white;
+            background: #f8f9fa;
             color: var(--primary-color);
             transform: translateY(-5px);
         }
@@ -1928,6 +1928,12 @@
             <!-- DIPLÔMES -->
             <div class="timeline" style="margin-top: 30px;">
                 <div class="timeline-item">
+                    <strong>2022</strong>
+                    <em>Baccalauréat</em>
+                    <p style="margin-top: 10px; color: #6b7280;">Lycée de Diass</p>
+                    <a href="./scr/assets/CERTEFICATS/Diplome Bac.pdf" target="_blank">Voir le diplôme</a>
+                </div>
+                <div class="timeline-item">
                     <strong>2023</strong>
                     <em>Licence Professionnelle en Géomatique et Développement d'Application</em>
                     <p style="margin-top: 10px; color: #6b7280;">Université Institut Supérieur d'Informatique (ISI)</p>
@@ -1959,6 +1965,9 @@
                 <span class="period">2023 – Aujourd'hui</span>
                 <ul>
                     <li>Conception et mise à jour de bases de données géographiques (SIG)</li>
+                    <li>Gestion des données spatiales et cartographie</li>
+                    <li>Support technique SIG</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -1967,12 +1976,6 @@
     <section id="projects">
         <div class="container-lg">
             <h2 class="section-title">
-                <div class="timeline-item">
-                    <strong>2022</strong>
-                    <em>Baccalauréat</em>
-                    <p style="margin-top: 10px; color: #6b7280;">Lycée (précisez le nom si besoin)</p>
-                    <a href="./scr/assets/CERTEFICATS/Diplome Bac.pdf" target="_blank">Voir le diplôme</a>
-                </div>
                 <i class="bi bi-folder-check"></i> Mes Projets
             </h2>
             <div class="projects-grid">
